@@ -1,11 +1,11 @@
-
 import './App.css';
+import Movies from './componet/Movies'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>movie app</h1>
+          <Movies/>
       </header>
     </div>
   );

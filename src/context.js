@@ -17,20 +17,21 @@ const AppProvider = ({children})=>{
         try {
             const response = await fetch(`${API_URL}`)
             const data = await response.json()
-            console.log(data.results);
+            //console.log(data.results);
+            setMovies(data.results)
             setLoading(false)
         } catch (error) {
             console.log(error);
         }
     }
-
+//console.log(movies);
 useEffect(()=>{
     moviesData()
 },[])
 
 
     return(
-        <AppContext.Provider>
+        <AppContext.Provider value={{movies,loading}}>
             {children}
         </AppContext.Provider>
     )
