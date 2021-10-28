@@ -1,0 +1,206 @@
+.main{
+   max-height:50%;
+   min-height:50%;
+   width:100%;
+   display:flex;
+   flex-direction:column;
+   align-items:center;
+   justify-content:center; 
+  
+}
+.hero{
+    height:100%;
+    width:100%;
+    position: relative;
+}
+.hero::after{
+    content:"";
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    height:100%;
+    width:100%;
+    background-color: #0b141d54;
+    background-image: linear-gradient(315deg, #0b141d57 0%, #0413203b 90%);
+    
+}
+.text{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 4.5%;
+    height:100%;
+    width:100%;
+    z-index: 100;
+    font-size:35px ;
+}
+.text h1{
+    text-transform: uppercase;
+}
+.text p{
+    color: #fff; 
+    font-size:25px;
+    padding-left: 40px
+}
+
+.imeg{
+    height:50%;
+    width:100%;
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    margin-left:0px;
+    
+} 
+.imeg img{
+    height:50%;
+    width:100%;
+
+} 
+/* .mainn-cont{
+    height:100%;
+    width:50%;
+    display:flex;
+}
+.movies-midyas {
+    background-color: #130f40;
+    background-image: linear-gradient(315deg, #130f40 0%, #000000 74%);
+    padding-bottom:30px;
+    padding-top:30px;
+    width:50px;
+
+}
+.test{
+    width: 70%;
+    height: 100%;
+}
+.theaters{
+    width: 300px;
+}
+/* theater con*/
+/*.movie-continers{
+    border-radius: 0;
+    background:none;
+    box-shadow: none;
+}
+.data-continers{
+    display:flex;
+    margin-top:15px;
+    flex-direction:column;
+    align-items: center;
+    justify-content:center;
+    color: #fff;
+    background-color:none;
+    border-radius: 0;
+    padding-bottom:20px
+}
+.over-views{
+    opacity: 1;
+} */
+
+.mainn-cont{
+    width: 100%;
+    height:450px;
+    border-top: 5px solid #5e0e06;
+    
+    display:flex;
+    background-color: #0b141d;
+    background-image: linear-gradient(315deg, #0b141d 0%, #041320 90%);
+    align-items: center;
+    justify-content: center;
+}
+.test{
+    width:70%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content:center;
+    
+    color: #fff;
+}
+.coming-test{
+    padding-left: 170px;
+}
+.top-test{
+    padding-right:90px
+}
+.text-div{
+    width:60%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:center;
+    text-align:start;
+    left: 0;
+}
+.test h1{
+    font-size:35px;
+    font-weight:bold;
+    margin: 0;
+    text-transform: uppercase;
+    
+}
+.test p{
+    color: #fff; 
+    font-size:25px
+}
+/*theaters-sec m-cont movies-midyas*/ 
+/*the section befor the slider*/
+.hom-top{
+    width:30%;
+    height:100%; 
+    
+}
+/*top-movie movies-midya theaters*/
+/*the div after the map*/
+.hom-theeater{
+    width:250px;
+    height:450px;
+    
+    
+}
+/*movie-continer movie-continers*/
+/*the main in the theators page*/
+.mai-the{
+    width: 200px;
+    height: 70%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25%;
+    margin-top: 20%;
+   border-radius: 5px;
+}
+/*theators page image*/
+/*photo-continer*/
+.the-photo{
+    width: 100%;
+    height: 80%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+  
+}
+.img-img{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.data-continers{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-size:25px;
+    font-weight:bolder;
+    padding: 10px;
+    color: #fff;
+}
