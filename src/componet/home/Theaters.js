@@ -1,10 +1,10 @@
 import React from 'react'
 import './home.css'
 /*the-photo */
-export default function Theaters({weekend,image,plot,genres,title}) {
+export default function Theaters({weekend,image,plot,genres,title,id}) {
     //console.log(plot);
     return (
-        <main className="mai-the">
+        <main className="mai-the" key={id}>
             <section className='photo-continer'>
                 <img src={image} alt={title} className='img-img' />
             </section> 

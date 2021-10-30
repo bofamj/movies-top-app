@@ -1,22 +1,24 @@
 import React from 'react';
+import Theaters from './Theaters';
+import Loading from '../Loading';
+import ComingSoon from './Comingsoon';
+import Tvshows from './Tvshows';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './home.css';
 import {useGlobalContext} from '../../context';
-import Theaters from './Theaters';
-import Loading from '../Loading'
-import ComingSoon from './Comingsoon'
+
 
 const Home = () => {
-    const {inTheaters,loading,comingSoon}= useGlobalContext();
+    const {inTheaters,loading,comingSoon,tvShow}= useGlobalContext();
     //console.log(inTheaters);
     function SampleNextArrow(props) {
         const { className, style, onClick } = props;
         return (
           <div
             className={className}
-            style={{ ...style, display: "block", right:"25px"  }}
+            style={{ ...style, display: "block", right:"50px" }}
             onClick={onClick}
           />
         );
@@ -27,7 +29,7 @@ const Home = () => {
         return (
           <div
             className={className}
-            style={{ ...style, display: "block", left:"0" }}
+            style={{ ...style, display: "block", left:"95px"}}
             onClick={onClick}
           />
         );
@@ -109,7 +111,7 @@ if(loading){
                   
                       <Slider {...settings}>
                           {comingSoon.map((soon)=>{
-                              console.log(soon);
+                              //console.log(soon);
                               return(
                                   <div className="hom-theeater">
                                       <ComingSoon key={soon.id} {...soon}/>
@@ -126,6 +128,27 @@ if(loading){
                   </div>
                 
                 </div>
+            </section>
+            <section className='mainn-cont show'>
+              <div className='test'>
+                <div className='text-div'>
+                  <h1>Watch everywhere.</h1>
+                  <p>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more.</p>
+                </div>
+                
+              </div>
+              <section className='hom-top top-test'>
+                <Slider {...settings}>
+                    {tvShow.map((show)=>{
+                                //console.log(movie);
+                      return(
+                        <div className="hom-theeater">
+                          <Tvshows key={show.id} {...show}/>
+                        </div>
+                            ) 
+                    })}
+                </Slider>
+              </section>
             </section>
         </main>
     )

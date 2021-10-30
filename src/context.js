@@ -16,12 +16,14 @@ const API_KEYS='k_6di256ry'
 const API_THEA=`https://imdb-api.com/en/API/BoxOffice/${API_KEYS}`
 //CONMING SOON API
 const API_SOON =`https://imdb-api.com/en/API/ComingSoon/${API_KEYS}`
+const API_TV = `https://imdb-api.com/en/API/MostPopularTVs/${API_KEYS}`
 const AppProvider = ({children})=>{
-    const [movies,setMovies]=useState([])
-    const [loading,setLoading]=useState(true)
-    const [theatres,setTheatres]=useState([])
-    const [inTheaters,setInTheaters]=useState([])
-    const [comingSoon,setComingSoone]=useState([])
+    const [movies,setMovies]=useState([]);
+    const [loading,setLoading]=useState(true);
+    const [theatres,setTheatres]=useState([]);
+    const [inTheaters,setInTheaters]=useState([]);
+    const [comingSoon,setComingSoone]=useState([]);
+    const [tvShow,setTVShow]=useState([]);
 
     const moviesData =async ()=>{
         setLoading(true)
@@ -30,7 +32,8 @@ const AppProvider = ({children})=>{
             const responseMov = axios.get(THE_API);
             const responseThea = axios.get(API_THEA);
             const responseSoon = axios.get(API_SOON);
-            axios.all([responseTop,responseMov,responseThea,responseSoon])
+            const responseTv= axios.get(API_TV );
+            axios.all([responseTop,responseMov,responseThea,responseSoon,responseTv])
             .then(
                 axios.spread((...response)=>{
                     if(response[0].status === 200) {
@@ -47,7 +50,11 @@ const AppProvider = ({children})=>{
                     }
                     if(response[3].status === 200) {
                         setComingSoone(response[3].data.items) 
-                        console.log(response[3].data.items);
+                        //console.log(response[3].data.items);
+                    }
+                    if(response[4].status === 200) {
+                        setTVShow(response[4].data.items) 
+                        //console.log(response[4].data.items);
                     }
                 })
             )
@@ -70,7 +77,7 @@ useEffect(()=>{
 
 
     return(
-        <AppContext.Provider value={{movies,loading,theatres,inTheaters,comingSoon}}>
+        <AppContext.Provider value={{movies,loading,theatres,inTheaters,comingSoon,tvShow}}>
             {children}
         </AppContext.Provider>
     )
