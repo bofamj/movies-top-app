@@ -36,7 +36,7 @@
     z-index: 1000;
 }
 .link:hover{
-    color:#aaa
+    color:rgb(248, 197, 88)
 }
 .link:active{
     /*background-color:rgb(243, 107, 107);*/

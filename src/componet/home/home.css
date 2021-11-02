@@ -33,17 +33,21 @@
     justify-content: center;
     top: 4.5%;
     height:100%;
-    width:100%;
-    z-index: 100;
+    width:45%;
+    z-index: 1;
     font-size:35px ;
+    margin-left: 25%;
 }
 .text h1{
     text-transform: uppercase;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.932);
 }
 .text p{
     color: #fff; 
     font-size:25px;
-    padding-left: 40px
+    padding-left: 40px;
+    top:0;
 }
 
 .imeg{

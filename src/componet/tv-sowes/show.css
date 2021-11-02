@@ -1,0 +1,24 @@
+.tv-show{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto ;
+    grid-gap: 30px 20px;
+    padding-left:20px;
+    color: rgba(255, 255, 255, 0.911);
+}
+.singel-com{
+    width: 25%;
+    height: 100%;
+}
+.tv-contin{
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 460px;
+    max-height: 460px;
+    
+}
+.tv-contin:hover{
+    position: relative; 
+    top: -10px;
+}

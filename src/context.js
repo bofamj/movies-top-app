@@ -17,6 +17,8 @@ const API_THEA=`https://imdb-api.com/en/API/BoxOffice/${API_KEYS}`
 //CONMING SOON API
 const API_SOON =`https://imdb-api.com/en/API/ComingSoon/${API_KEYS}`
 const API_TV = `https://imdb-api.com/en/API/MostPopularTVs/${API_KEYS}`
+//top 250 tv show api
+const API_SHOW = `https://imdb-api.com/en/API/Top250TVs/${API_KEYS}`
 const AppProvider = ({children})=>{
     const [movies,setMovies]=useState([]);
     const [loading,setLoading]=useState(true);
@@ -24,7 +26,7 @@ const AppProvider = ({children})=>{
     const [inTheaters,setInTheaters]=useState([]);
     const [comingSoon,setComingSoone]=useState([]);
     const [tvShow,setTVShow]=useState([]);
-
+    const [topSowes,setTopShowes]=useState([])
     const moviesData =async ()=>{
         setLoading(true)
         try {
@@ -33,7 +35,8 @@ const AppProvider = ({children})=>{
             const responseThea = axios.get(API_THEA);
             const responseSoon = axios.get(API_SOON);
             const responseTv= axios.get(API_TV );
-            axios.all([responseTop,responseMov,responseThea,responseSoon,responseTv])
+            const responseTvSow= axios.get(API_SHOW );
+            axios.all([responseTop,responseMov,responseThea,responseSoon,responseTv,responseTvSow])
             .then(
                 axios.spread((...response)=>{
                     if(response[0].status === 200) {
@@ -56,6 +59,11 @@ const AppProvider = ({children})=>{
                         setTVShow(response[4].data.items) 
                         //console.log(response[4].data.items);
                     }
+                    //top tv show
+                    if(response[5].status === 200) {
+                        setTopShowes(response[5].data.items); 
+                        //console.log(response[5].data.items);
+                    }
                 })
             )
             /* const response = await fetch(url)
@@ -77,7 +85,7 @@ useEffect(()=>{
 
 
     return(
-        <AppContext.Provider value={{movies,loading,theatres,inTheaters,comingSoon,tvShow}}>
+        <AppContext.Provider value={{movies,loading,theatres,inTheaters,comingSoon,tvShow,topSowes}}>
             {children}
         </AppContext.Provider>
     )

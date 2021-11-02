@@ -1,8 +1,9 @@
 import './App.css';
-import Movies from './componet/Movies'
-import AllMovies from './componet/AllMovies'
-import Nav from './componet/navBar/Nav'
-import Home from './componet/home/Home'
+import Movies from './componet/Movies';
+import AllMovies from './componet/AllMovies';
+import Nav from './componet/navBar/Nav';
+import Home from './componet/home/Home';
+import TvShoe from './componet/tv-sowes/TvShoe';
 import {
   BrowserRouter as Router,
   Switch,
@@ -34,6 +35,12 @@ function App() {
                 
                 <AllMovies />
             </main>
+          </Route>
+          <Route exact path="/tv show">
+            <main className='tv-shows'>
+              <TvShoe/>
+            </main> 
+            
           </Route>
         </Switch>
       </div>

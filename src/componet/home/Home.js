@@ -80,8 +80,7 @@ if(loading){
                     <img src="https://4kwallpapers.com/images/walls/thumbs_3t/6495.jpg" alt="venom" style={{'width': '100%', 'height': '610px'}}/>
                 </div>
                 <div className='text'>
-                  <h1>Unlimited movies, TV shows, and more.</h1>
-                  <p>Watch anywhere. Cancel anytime</p>
+                  <h1>Unlimited movies   TV shows and more.</h1>
                 </div>
                 
             </section>
@@ -89,7 +88,8 @@ if(loading){
               <div className='test'>
                 <div className='text-div'>
                   <h1>Enjoy on your TV.</h1>
-                  <p>Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
+                  <p>Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players,
+                  and more.</p>
                 </div>
                 
               </div>

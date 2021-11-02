@@ -1,3 +1,6 @@
+body{
+  font-family: 'Rubik', sans-serif;
+}
 .App {
   width:100%;
   max-width: 100%;
@@ -48,4 +51,15 @@ h1{
   min-height: 100%;
   margin-top:50px;
   background-color: rgb(207, 207, 207);
+}
+/*tv show page*/
+.tv-shows{
+  height:100%;
+  width:100%;
+  padding-top:100px;
+  display:flex;
+  flex-wrap: wrap;
+  /* display: grid;
+  grid-template-columns: auto auto auto auto ;
+  grid-gap: 30px 20px; */
 }
